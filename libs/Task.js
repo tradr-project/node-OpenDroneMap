@@ -34,7 +34,7 @@ let Directories = require('./Directories');
 let statusCodes = require('./statusCodes');
 
 module.exports = class Task{
-	constructor(uuid, name, done, options = [], webhook = null){
+	constructor(uuid, name, done, options, webhook = null){
 		assert(uuid !== undefined, "uuid must be set");
 		assert(done !== undefined, "ready must be set");
 
@@ -305,7 +305,7 @@ module.exports = class Task{
 			};
 
 			// All paths are relative to the project directory (./data/<uuid>/)
-			let allPaths = ['odm_orthophoto', 'odm_georeferencing', 'odm_texturing', 
+			let allPaths = ['odm_orthophoto', 'odm_georeferencing', 'odm_texturing', 'opensfm',
 							  'odm_dem/dsm.tif', 'odm_dem/dtm.tif', 'dsm_tiles', 'dtm_tiles',
 							  'odm_meshing', 'orthophoto_tiles', 'potree_pointcloud'];
 			
